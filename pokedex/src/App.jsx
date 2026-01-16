@@ -5,7 +5,7 @@ function App() {
  
 
   return (
-    <div className='bg-rose-700'>
+    <div className='bg-gray-800'>
       <AppRoutes/>
     </div>
   )
