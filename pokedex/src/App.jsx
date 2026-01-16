@@ -5,7 +5,7 @@ function App() {
  
 
   return (
-    <div>
+    <div className='bg-rose-700'>
       <AppRoutes/>
     </div>
   )

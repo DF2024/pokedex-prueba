@@ -6,7 +6,7 @@ import Logo from '../assets/logo/pokedex-logo.png'
 const Navbar = () => {
     return(
         <header>
-            <div className="bg-rose-600">
+            <div >
                 <nav className="flex justify-between items-center px-20 py-5">
                     <div>
                         <Link to={'/'}>
@@ -33,7 +33,7 @@ const Navbar = () => {
                     <div>
                         <Link to={'/favorites'}>
                             <button 
-                                className="inline-block rounded-xl bg-rose-800 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl" href="#">
+                                className="inline-block rounded-xl bg-gray-900 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl" href="#">
                                 Favorites
                             </button>
                         </Link>
