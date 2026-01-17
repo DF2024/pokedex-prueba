@@ -1,13 +1,28 @@
+import { getPokemons } from "../../api/PokeInfo";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const cards = Array.from({ length: 6 });
-
 const PokemonCard = () => {
+  const [pokemon, setPokemon] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getPokemons()
+      .then((data) => {
+        setPokemon(Array.isArray(data) ? data : []);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return <p className="text-center py-20">Cargando Pokémon...</p>;
+  }
+
   return (
     <div className="grid grid-cols-3 gap-12 px-20 py-14 w-[1420px] mx-auto">
-      {cards.map((_, index) => (
+      {pokemon.map((item) => (
         <div
-          key={index}
+          key={item.id}
           className="
             w-[320px]
             bg-[#e0e0e0]
@@ -42,7 +57,7 @@ const PokemonCard = () => {
             </div>
 
             <span className="text-[10px] font-mono font-bold text-gray-500 bg-gray-200 px-2 rounded shadow-inner">
-              #00001
+              #{item.id}
             </span>
           </div>
 
@@ -56,16 +71,15 @@ const PokemonCard = () => {
             relative
             overflow-hidden
           ">
-            {/* Grid retro */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none
               bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)]
               bg-[length:100%_2px]" />
 
             <div className="bg-white/40 rounded-lg p-2 backdrop-blur-sm border border-white/20">
               <img
-                src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?auto=format&fit=crop&q=80&w=1160"
-                alt=""
-                className="h-32 w-full object-contain drop-shadow-md "
+                src={item.image}
+                alt={item.name}
+                className="h-32 w-full object-contain drop-shadow-md"
               />
             </div>
           </div>
@@ -73,15 +87,21 @@ const PokemonCard = () => {
           {/* Info */}
           <div className="mb-6 space-y-1">
             <h3 className="text-lg font-black text-gray-800 uppercase italic tracking-tighter">
-              Pokémon
+              {item.name}
             </h3>
 
-            <div className="flex gap-2">
-              <span className="bg-blue-700 text-white text-xs px-2 py-1 rounded shadow-inner">
-                Tipo
-              </span>
+            <div className="flex gap-2 flex-wrap">
+              {item.types?.map((type) => (
+                <span
+                  key={type}
+                  className="bg-blue-700 text-white text-xs px-2 py-1 rounded shadow-inner"
+                >
+                  {type}
+                </span>
+              ))}
+
               <span className="bg-green-700 text-white text-xs px-2 py-1 rounded shadow-inner">
-                Poder
+                EXP {item.power}
               </span>
             </div>
           </div>
@@ -96,7 +116,7 @@ const PokemonCard = () => {
 
             {/* Botones */}
             <div className="flex gap-3">
-              <Link to="/details">
+              <Link to={`/details/${item.id}`}>
                 <button className="
                   w-10 h-10
                   bg-[#e0e0e0]

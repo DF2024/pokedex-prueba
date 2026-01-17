@@ -1,4 +1,4 @@
-import PokemonCard from "../components/PokemonCard"
+import PokemonCard from "../components/Cards/PokemonCard"
 
 const HomePage = () => {
     return(
