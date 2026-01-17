@@ -3,7 +3,7 @@ import pokeAPI from "./PokeApi";
 
 export const getPokemons = async () => {
     try {
-        const {data} = await pokeAPI.get("/pokemon?limit=8")
+        const {data} = await pokeAPI.get("/pokemon?limit=251")
         
         const pokemonDetails = await Promise.all(
             data.results.map(async (pokemon) => {

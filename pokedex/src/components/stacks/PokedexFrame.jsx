@@ -1,6 +1,6 @@
 const PokedexFrame = ({ children }) => {
     return (
-        <div className="mt-2 flex justify-center">
+        <div className="flex justify-center">
             <div
                 className="
                 flex flex-col

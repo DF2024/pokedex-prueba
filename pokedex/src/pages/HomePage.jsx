@@ -2,7 +2,7 @@ import PokemonCard from "../components/Cards/PokemonCard"
 
 const HomePage = () => {
     return(
-        <div>
+        <div className="bg-gray-300">
             <PokemonCard/>
         </div>
     )

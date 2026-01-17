@@ -1,15 +1,5 @@
 const MAX_STAT = 200;
 
-/**
- * stats viene desde la API ya transformada:
- * [
- *   { name: "hp", base: 45 },
- *   { name: "attack", base: 49 },
- *   { name: "defense", base: 49 },
- *   { name: "speed", base: 45 }
- * ]
- */
-
 const BaseStacks = ({ stats }) => {
     if (!stats || stats.length === 0) return null;
 
