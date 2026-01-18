@@ -27,12 +27,30 @@ const PokemonCard = () => {
   }
 
   return (
-    <div className="grid grid-cols-5 gap-12 px-20 py-14 w-[1820px] mx-auto">
+    <div 
+        className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          md:grid-cols-3
+          lg:grid-cols-4
+          xl:grid-cols-5
+          gap-8
+          px-4
+          sm:px-8
+          lg:px-12
+          py-10
+          max-w-[1800px]
+          mx-auto
+      "
+    >
       {pokemon.map((item) => (
         <div
           key={item.id}
           className="
-            w-[320px]
+            w-full
+            max-w-[320px]
+            mx-auto
             bg-[#e0e0e0]
             rounded-[30px]
             p-5
@@ -87,7 +105,7 @@ const PokemonCard = () => {
               <img
                 src={item.image}
                 alt={item.name}
-                className="h-32 w-full object-contain drop-shadow-md"
+                className="h-28 sm:h-32 w-full object-contain drop-shadow-md"
               />
             </div>
           </div>
@@ -144,10 +162,17 @@ const PokemonCard = () => {
                 rounded-full
                 shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff]
                 active:shadow-[inset_2px_2px_4px_#bebebe]
-                text-red-600
                 text-xl
               ">
-                +
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 mx-auto">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier"> 
+                    <path d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z" fill="#e60000"></path> 
+                    </g>
+                  </svg>
+
+                  
               </button>
             </div>
 

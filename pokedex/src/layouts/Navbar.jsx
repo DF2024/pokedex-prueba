@@ -1,40 +1,70 @@
 import { Outlet, Link} from "react-router-dom"
 import Logo from '../assets/logo/pokedex-logo.png'
 
-
-
 const Navbar = () => {
     return(
-        <header>
-            <div>
-                <nav className="flex justify-between items-center px-20 py-5 bg-gray-300">
-                    <div>
-                        <Link to={'/'}>
-                            <img src={Logo} alt="pokedexlogo" className="w-50"/>
-                        </Link>
-                    </div>
+    <header>
+        <nav
+            className="
+            flex
+            items-center
+            justify-between
+            bg-gray-300
+            px-4
+            sm:px-8
+            lg:px-16
+            py-3
+            sm:py-4
+            "
+        >
+            {/* Logo */}
+            <Link to="/" className="flex items-center">
+            <img
+                src={Logo}
+                alt="pokedexlogo"
+                className="
+                w-32
+                sm:w-40
+                lg:w-48
+                "
+            />
+            </Link>
 
-                    <div>
-                        <Link to={'/favorites'}>
-                            <button 
-                                className="w-15 h-15 rounded-full bg-blue-500 border-4 border-[#e0e0e0] shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff] flex items-center justify-center">
-                                <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" className="w-8">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                    <g id="SVGRepo_iconCarrier">
-                                    <path clip-rule="evenodd" d="M5 2.92445C5 1.8616 5.8616 1 6.92444 1H20.3956C21.4584 1 22.32 1.8616 22.32 2.92444V25.0556C22.32 26.6414 20.5096 27.5466 19.2409 26.5951L13.66 22.4094L8.07911 26.5951C6.81045 27.5466 5 26.6414 5 25.0556V2.92445ZM20.3956 3.50178C20.3956 3.18293 20.1371 2.92444 19.8182 2.92444L7.50178 2.92445C7.18293 2.92445 6.92444 3.18293 6.92444 3.50178V24.4782C6.92444 24.7161 7.19601 24.8519 7.38631 24.7092L12.5053 20.8699C13.1896 20.3567 14.1304 20.3567 14.8147 20.8699L19.9337 24.7092C20.124 24.8519 20.3956 24.7161 20.3956 24.4782V3.50178Z" fill="#ffffff" fill-rule="evenodd">
-                                        </path>
-                                    <path d="M10 11C10 10.4477 10.4477 10 11 10H17C17.5523 10 18 10.4477 18 11C18 11.5523 17.5523 12 17 12H11C10.4477 12 10 11.5523 10 11Z" fill="#ffffff"></path>
-                                    <path d="M14 15C13.4477 15 13 14.5523 13 14V8C13 7.44772 13.4477 7 14 7C14.5523 7 15 7.44772 15 8V14C15 14.5523 14.5523 15 14 15Z" fill="#ffffff"></path>
-                                    </g>
-                                </svg>
-                            </button>
-                        </Link>
-                    </div>
-                </nav>
-            </div>
-            <Outlet/>
-        </header>
+            {/* Favorites */}
+            <Link to="/favorites">
+                <button
+                    className="
+                    w-12 h-12
+                    sm:w-14 sm:h-14
+                    lg:w-15 lg:h-15
+                    rounded-full
+                    bg-blue-500
+                    border-4 border-[#e0e0e0]
+                    shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff]
+                    flex items-center justify-center
+                    transition 
+                    delay-150 
+                    duration-300 
+                    ease-in-out 
+                    hover:-translate-y-1 
+                    hover:scale-110 
+                    hover:bg-red-600
+                    "
+                >
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 sm:w-7 lg:w-8">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier"> 
+                    <path d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z" fill="#ffffff"></path> 
+                    </g>
+                </svg>
+                </button>
+            </Link>
+        </nav>
+
+        <Outlet />
+    </header>
+
     )
 }
 
