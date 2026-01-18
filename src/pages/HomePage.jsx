@@ -1,4 +1,4 @@
-import PokemonCard from "../components/Cards/PokemonCard"
+import PokemonCard from "../components/cards/PokemonCard"
 import { getPokemons } from "../api/PokeInfo";
 import { useState, useEffect } from "react";
 

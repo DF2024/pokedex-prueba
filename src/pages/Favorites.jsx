@@ -1,11 +1,13 @@
-const Favorites = () => {
-    return(
-        <div>
-            <h1>
-                Favorites
-            </h1>
-        </div>
-    )
-}
+import { useFavorites } from "../hooks/useFavorites"
+import PokemonFavoritesCard from "../components/cards/PokemonFavoritesCard";
 
-export default Favorites
+const Favorites = () => {
+
+    return (
+        <div>
+            <PokemonFavoritesCard/>
+        </div>
+    );
+};
+
+export default Favorites;
