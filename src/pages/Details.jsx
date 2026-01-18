@@ -1,11 +1,10 @@
 import InfoPokemon from "../components/stacks/InfoPokemon"
 import { useParams } from "react-router-dom";
-import PokedexFrame from "../components/stacks/PokedexFrame"
-import PokedexHeader from "../components/stacks/PokedexHeader"
 import { useState, useEffect } from "react";
 import { getPokemonDetails } from "../api/PokeDetails";
 import PokeballButton from "../components/stacks/PokeBallButton";
 import {Link} from 'react-router-dom'
+
 const PokemonDetails = () => {
     const { id } = useParams();
     const [pokemon, setPokemon] = useState(null);
@@ -50,13 +49,7 @@ const PokemonDetails = () => {
 
     return (
             <div>
-                <PokedexFrame>
-                    <PokedexHeader id={pokemon.id} />
-                    <InfoPokemon pokemon={pokemon} stats={pokemon.stats}/>
-                </PokedexFrame>
-                <Link to='/'>
-                    <PokeballButton/>
-                </Link>
+                <InfoPokemon pokemon={pokemon} stats={pokemon.stats} id={pokemon.id}/>
             </div>
     )
 }
