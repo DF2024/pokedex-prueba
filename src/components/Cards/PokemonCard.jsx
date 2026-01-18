@@ -1,30 +1,6 @@
-import { getPokemons } from "../../api/PokeInfo";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const PokemonCard = () => {
-  const [pokemon, setPokemon] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    getPokemons()
-      .then((data) => {
-        setPokemon(Array.isArray(data) ? data : []);
-      })
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) {
-    return (
-    <div className="min-h-screen flex justify-center items-center">
-      <svg class="size-8 animate-spin text-blue-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-      </svg>
-    </div>
-);
-  }
+const PokemonCard = ({pokemon}) => {
 
   return (
     <div 
@@ -149,10 +125,16 @@ const PokemonCard = () => {
                   rounded-full
                   shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff]
                   active:shadow-[inset_2px_2px_4px_#bebebe]
-                  text-gray-700
-                  font-bold
                 ">
-                  i
+        
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 mx-auto">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier"> 
+                      <path d="M12 5V15M12 19H12.01" stroke="#53505e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        </path> 
+                    </g>
+                  </svg>
                 </button>
               </Link>
 
@@ -164,14 +146,29 @@ const PokemonCard = () => {
                 active:shadow-[inset_2px_2px_4px_#bebebe]
                 text-xl
               ">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 mx-auto">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier"> 
-                    <path d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z" fill="#e60000"></path> 
-                    </g>
-                  </svg>
 
+                <svg 
+                  viewBox="0 0 32 32" 
+                  version="1.1" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  xmlns:xlink="http://www.w3.org/1999/xlink" 
+                  xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" 
+                  fill="#000000"
+                  className="w-5 mx-auto"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier"> 
+                    <title>plus</title> 
+                    <desc>Created with Sketch Beta.</desc> 
+                    <defs> </defs> 
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> 
+                      <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-362.000000, -1037.000000)" fill="#e60000"> 
+                        <path d="M390,1049 L382,1049 L382,1041 C382,1038.79 380.209,1037 378,1037 C375.791,1037 374,1038.79 374,1041 L374,1049 L366,1049 C363.791,1049 362,1050.79 362,1053 C362,1055.21 363.791,1057 366,1057 L374,1057 L374,1065 C374,1067.21 375.791,1069 378,1069 C380.209,1069 382,1067.21 382,1065 L382,1057 L390,1057 C392.209,1057 394,1055.21 394,1053 C394,1050.79 392.209,1049 390,1049" id="plus" sketch:type="MSShapeGroup"> 
+                          </path> </g> 
+                          </g> 
+                          </g>
+                  </svg>
                   
               </button>
             </div>
