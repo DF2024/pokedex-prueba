@@ -7,8 +7,8 @@ export const getPokemons = async () => {
         
         const pokemonDetails = await Promise.all(
             data.results.map(async (pokemon) => {
-            const res = await axios.get(pokemon.url);
-            const p = res.data;
+                const res = await axios.get(pokemon.url);
+                const p = res.data;
 
                 return {
                     id: p.id,

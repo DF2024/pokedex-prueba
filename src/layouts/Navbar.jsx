@@ -16,20 +16,19 @@ const Navbar = () => {
             sm:py-4
             "
         >
-            {/* Logo */}
+
             <Link to="/" className="flex items-center">
-            <img
-                src={Logo}
-                alt="pokedexlogo"
-                className="
-                w-32
-                sm:w-40
-                lg:w-48
-                "
-            />
+                <img
+                    src={Logo}
+                    alt="pokedexlogo"
+                    className="
+                    w-32
+                    sm:w-40
+                    lg:w-48
+                    "
+                />
             </Link>
 
-            {/* Favorites */}
             <Link to="/favorites">
                 <button
                     className="
