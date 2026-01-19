@@ -4,7 +4,7 @@ Proyecto **Pokedex** desarrollado como aplicación web para visualizar informaci
 
 La aplicación consume datos desde la **PokeAPI** y permite explorar el catálogo completo, consultar información detallada de cada Pokémon y gestionar una lista de favoritos.
 
----
+
 
 ## 🚀 Funcionalidades
 
@@ -21,7 +21,7 @@ La aplicación consume datos desde la **PokeAPI** y permite explorar el catálog
 * 🧭 Navegación fluida entre vistas
 * 📱 Interfaz **responsive**
 
----
+
 
 ## 🧱 Arquitectura
 
@@ -29,7 +29,7 @@ Aplicación frontend desarrollada con arquitectura basada en componentes, utiliz
 Se aplica separación de responsabilidades entre componentes de presentación, hooks personalizados y servicios de acceso a datos (API).
 El proyecto sigue un modelo de Client-Side Rendering (CSR), consumiendo datos desde una API REST externa (PokeAPI).
 
----
+
 
 ## 🛠️ Tecnologías utilizadas
 
@@ -38,7 +38,7 @@ El proyecto sigue un modelo de Client-Side Rendering (CSR), consumiendo datos de
 * **Axios** – Consumo de la API
 * **PokeAPI** – Fuente de datos de los Pokémon
 
----
+
 
 ## 📦 Instalación y ejecución
 
@@ -72,7 +72,7 @@ npm run dev
 http://localhost:5173
 ```
 
----
+
 
 ## 📁 Estructura general del proyecto
 
@@ -89,7 +89,7 @@ src/
 │── main.jsx
 ```
 
----
+
 
 ## 🌐 API utilizada
 
@@ -102,7 +102,7 @@ Se utiliza para obtener información de Pokémon como:
 * Estadísticas
 * Imágenes
 
----
+
 
 ## 🎯 Objetivo del proyecto
 
@@ -113,7 +113,7 @@ Este proyecto fue desarrollado con fines educativos para:
 * Implementar rutas y vistas dinámicas
 * Diseñar interfaces modernas con Tailwind CSS
 
----
+
 
 ## 👨‍💻 Autor
 
@@ -121,4 +121,3 @@ Este proyecto fue desarrollado con fines educativos para:
 
 Proyecto personal de aprendizaje y práctica con React.
 
----
