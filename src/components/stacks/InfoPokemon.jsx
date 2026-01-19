@@ -97,9 +97,10 @@ const Icons = {
             </div>
             );
 
-            const InfoPokemon = ({ pokemon, stats, id }) => {
-            if (!stats || stats.length === 0) return null;
 
+        const InfoPokemon = ({ pokemon, stats, id }) => {
+            if (!stats || stats.length === 0) return null;
+            
 
             const STAT_CONFIG = [
                 { key: "hp", label: "HP", color: "text-red-500", icon: <Icons.Heart /> },
