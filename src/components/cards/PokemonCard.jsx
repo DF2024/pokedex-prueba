@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { useFavorites } from "../../hooks/useFavorites";
+import { useActionState, useState } from "react";
 
 const PokemonCard = ({ pokemon }) => {
   const { addFavorite, removeFavorite, isFavorite } = useFavorites();
+
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 px-4 sm:px-8 lg:px-12 py-10 max-w-[1800px] mx-auto">

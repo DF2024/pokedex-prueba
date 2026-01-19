@@ -7,7 +7,7 @@ const PokemonFavoritesCard = () => {
 
     if (favorites.length === 0) {
         return (
-        <p className="text-center min-h-screen flex items-center justify-center text-gray-500 text-xl">
+        <p className="text-center h-132 flex items-center justify-center text-gray-500 mt-20 text-xl">
             No tienes Pokémon favoritos aún
         </p>
         );

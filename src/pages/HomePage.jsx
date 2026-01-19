@@ -1,10 +1,13 @@
 import PokemonCard from "../components/cards/PokemonCard"
 import { getPokemons } from "../api/PokeInfo";
 import { useState, useEffect } from "react";
+import Pagination from "../components/PaginationPoke";
 
 const HomePage = () => {
     const [pokemon, setPokemon] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postsPerPage, setPostsPerPage] = useState(10)
 
     useEffect(() => {
         getPokemons()
@@ -13,6 +16,10 @@ const HomePage = () => {
         })
         .finally(() => setLoading(false));
     }, []);
+
+    const lastPostIndex = currentPage * postsPerPage
+    const firstPostIndex = lastPostIndex - postsPerPage
+    const currentPosts = pokemon.slice(firstPostIndex, lastPostIndex)
 
     if (loading) {
         return (
@@ -45,7 +52,13 @@ const HomePage = () => {
 
     return(
         <div>
-            <PokemonCard pokemon={pokemon}/>
+            <PokemonCard pokemon={currentPosts}/>
+            <Pagination
+                totalPosts={pokemon.length}
+                postsPerPage={postsPerPage}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
         </div>
     )
 }
